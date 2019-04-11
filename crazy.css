@@ -3897,6 +3897,54 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
+sidebar {
+  position: fixed;
+  top: 45px;
+  left: 0px;
+  width: 10px;
+  height: 1000px;
+  background-color: rgb(250, 156, 234);
+  color: white;
+  margin: 0px;
+  padding: 10px 5px;
+  white-space:nowrap;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar li, .sidebar ul {
+  list-style-type: none;
+  margin:3px;
+  padding: 2px;
+}
+.sidebar {
+  transition: width 1s;
+ }
+.sidebar a:hover {
+  color: rgb(241, 52, 124);
+}
+.sidebar:hover {
+  width: 150px; 
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+navbar {
+  overflow: hidden;
+  background-color: rgb(250, 156, 234);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: rgb(241, 52, 124);
 }
 sup {
   top: -0.5em;
@@ -7059,6 +7107,27 @@ article.project > .content.withAwards{
     margin-bottom: 50px;
 }
 
-
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: rgb(235, 22, 235);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+dropdown:hover .dropdown-content {
+  display: block;
+}
 
 
