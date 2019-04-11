@@ -45,18 +45,6 @@
     <div id="site">
     <div id="page" class="main">
 
-        div
-{
-	width:100px;
-	height:100px;
-	transition:width 2s;
-	-webkit-transition:width 2s; /* Safari */
-}
-
-div:hover
-{
-	width:300px;
-}
 </style>
 </head>
 <body>
@@ -67,7 +55,7 @@ div:hover
         <div class="tablecell">
             <div class="centered menu">
                 <div>
-                    <a href="#" class="big" data-target="intro"><span>首頁</span></a>
+                    <a href="#" class="big" data-target="intro"><span>回頂端</span></a>
                 </div>
                 <div class="list">
                     <a href="#" class="big" data-target="culture"><span>背景故事</span></a>
@@ -103,6 +91,23 @@ div:hover
                             </div>
         </div>
     </div>
+<div class="navbar">
+  <a href="#home">首頁</a>
+  <a href="#news">最新情報</a>
+  <a href="#home">討論區</a>
+  <a href="#news">攻略網</a>  <a href="#home">☆</a>
+  <a href="#news">回饋</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">相關商品
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#">茶熊咖啡店</a>
+    <a href="#">星狸貓抱枕</a>
+    <a href="#">官方設定集</a>
+  </div>
+  </div> 
+</div>
     <div class="bottomarea">
         <div class="social">
             <ul>
