@@ -9,7 +9,7 @@ body {
 .navbar a {
   float: left;
   font-size: 16px;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -23,9 +23,9 @@ body {
   font-size: 16px;  
   border: none;
   outline: none;
-  color: white;
+  color:black;
   padding: 14px 16px;
-  background-color: inherit;
+  background-color: #33FFFF;
   font-family: inherit;
   margin: 0;
 }
@@ -35,14 +35,14 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #99FF33;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 .dropdown-content a {
   float: none;
-  color: rgb(235, 22, 235);
+  color: rgb(135, 22, 135);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -60,14 +60,14 @@ body {
   left: 0px;
   width: 10px;
   height: 1000px;
-  background-color: rgb(250, 156, 234);
-  color: white;
+  background-color: rgb(150, 56, 134);
+  color: black;
   margin: 0px;
   padding: 10px 5px;
   white-space:nowrap;
 }
 .sidebar a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 .sidebar li, .sidebar ul {
