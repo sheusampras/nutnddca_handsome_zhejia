@@ -92,3 +92,14 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+img
+{
+  border:5px dotted  rgb(185, 103, 233);
+  opacity:0.4;
+  filter:alpha(opacity=40);
+}
+img:hover
+{
+  opacity:1.0;
+  filter:alpha(opacity=100);
+}
