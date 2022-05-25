@@ -1,0 +1,265 @@
+<html>
+<head>
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<style>
+
+body {
+    text-align: center;
+    padding: 60px;
+}
+
+img {
+    height: 200px;
+}
+
+textarea {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 5px auto;
+    display: block;
+}
+
+button {
+    display: block;
+    width: 324px;
+    padding: 10px;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px auto;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a02732;
+}
+
+button:active {
+    background-color: #dc3545;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC');
+body{
+  background-color:#CCC3B3;
+  font-family: 'Noto Serif TC', serif;
+
+}
+.get-result {
+    width: 500px;
+    margin: 2% auto;
+    text-align: center;
+}
+a#go {
+    font-size: 25px;
+    text-decoration: none;
+    background-color: #A94532;
+    padding: 10px 35px;
+    color: #fff;
+    border:2px solid #A94532;
+    letter-spacing:2px;
+}
+a#go:hover{
+  color:#A94532;
+  background-color:transparent;
+}
+.all {
+    display: -webkit-box;
+    margin:auto;
+    width:500px;
+}
+.right {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border-radius: 150px;
+    box-shadow: inset -95px -10px 0px 15px #8A1E15;
+}
+.right span {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border: 150px;
+    box-shadow: inset -95px 5px 30px -35px #A94532;
+    border-radius: 150px;
+}
+.left {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border-radius: 150px;
+    box-shadow: inset 95px 10px 0px 15px #8A1E15;
+    margin-right: -20%;
+}
+.left span {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border: 150px;
+    box-shadow: inset 95px -5px 30px -35px #A94532;
+    border-radius: 150px;
+}
+
+.r,
+#last-div {
+   margin-top: 10%;
+    display: none;
+}
+div#last-div {
+    font-size: 35px;
+}
+
+
+#Odiv{
+           margin:0 auto;
+            width: 200px;
+            height:200px;
+            background: yellow;
+        }
+</style>
+
+</head>
+<body>
+<!--丟杯-->
+<div class="get-result">
+  <a id="go" href="#">擲筊</a> 
+
+<div class="hide">
+
+<div id="r1" class="r">
+	<div class="all" id="all">
+	<div class="left"></div>
+	<div class="right"><span></span></div>
+	</div>
+</div>
+<div id="r2" class="r">
+	<div class="all" id="all">
+	<div class="left"><span></span></div>
+	<div class="right"></div>
+	</div>
+</div>
+<div id="r3" class="r">
+	<div class="all" id="all">
+	<div class="left"></div>
+	<div class="right"><span></span></div>
+	</div>
+</div>
+
+</div>
+
+<div id="last-div">
+三個聖筊<br>月老顯靈<br>可以抽籤！
+</div>
+</div>
+
+<!--抽籤-->
+    <img src="https://sb.koding.school/project_assets/340268eb8629923b937ff7c671915d98.png" class="js-img-ok"/>
+    <img src="https://sb.koding.school/project_assets/3427b4fab4d70b8636458e3274e42da9.gif" class="js-img-shake"/>
+    <h1 class="js-result">老公宮抽籤</h1>
+
+    <button class="js-start">開抽！</button>
+
+
+<script>
+<!--抽籤-->
+$('.js-img-shake').hide();
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
+
+$('.js-start').on('click', function () {
+ var number = getRndInteger(1,15);
+
+
+    $('.js-img-shake').show();
+    $('.js-img-ok').hide();
+    $('.js-result').text('等待抽籤結果...');
+    setTimeout(function() {
+        $('.js-img-shake').hide();
+        $('.js-img-ok').show();
+        $('.js-result').text('抽籤結果：第' + [number] + '籤！');
+    }, 3000);
+});
+
+
+
+<!--丟杯-->
+$(document).ready(function () {
+    var all,
+        randomed;
+    
+    all = generateAll();
+    randomed = generateRandomed(all);
+    
+    $("#go").on("click", function (evt) {
+        evt.preventDefault();
+        randomed = doNext(all, randomed);
+    });
+});
+
+function generateAll() {
+    // Generates the array of "all" divs to work on
+    var a = [];
+    var divs = $(".hide > div.r");
+    for (var i = 1; i <= divs.length; i++) {
+        a.push(i);
+    }
+    console.log("總區塊: " + a);
+    return a;
+}
+
+function generateRandomed(all) {
+    // Randomizes the original array
+    randomed = fisherYates(all);
+    console.log("隨機順序: " + randomed);
+    return randomed;
+}
+
+function doNext(all, randomed) {
+    $(".r, #last-div").hide();
+    
+    if (randomed.length < 1) {
+        console.log("顯示可以抽籤");
+        $("#last-div").show();
+        randomed = generateRandomed(all);
+    } else {
+        var next = randomed.shift();
+        var selector = "#r" + next;
+        console.log("顯示 " + selector);
+        $(selector).show();
+        console.log("剩下: " + randomed);
+    }
+    
+    return randomed;
+}
+
+// Randomizes an array and returns the new one (doesn't modify original)
+function fisherYates ( myArray ) {
+  var return_arr = myArray.slice(0);
+  var i = return_arr.length;
+  if ( i == 0 ) return false;
+  while ( --i ) {
+     var j = Math.floor( Math.random() * ( i + 1 ) );
+     var tempi = return_arr[i];
+     var tempj = return_arr[j];
+     return_arr[i] = tempj;
+     return_arr[j] = tempi;
+  }
+  return return_arr;
+}
+
+
+</script>
+
+</body>
+</html>
