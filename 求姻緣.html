@@ -166,7 +166,7 @@ div#last-div {
     <img src="https://sb.koding.school/project_assets/3427b4fab4d70b8636458e3274e42da9.gif" class="js-img-shake"/>
     <h1 class="js-result">老公宮抽籤</h1>
 
-    <button class="js-start">開抽！</button>
+    <button class="js-start" onclick="selectCard();">開抽！</button>
 
 
 <script>
@@ -191,7 +191,18 @@ $('.js-start').on('click', function () {
     }, 3000);
 });
 
-
+function selectCard(){
+      var cards1 = ["1","2" , "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+      var card_n1 = cards1 [getRandom(0,15)];
+      var card = card_n1;
+      console.log( card  );
+      var card_div = document.getElementById("card");
+      card_div.innerHTML =  `<img src='https://sheusampras.github.io/nutnddca_handsome_zhejia/${card}.png' alt='Playing Card'>`;
+    };
+    function getRandom(min, max) { 
+      return Math.floor(Math.random() * (max - min) ) + min;
+    };
+	
 
 <!--丟杯-->
 $(document).ready(function () {
