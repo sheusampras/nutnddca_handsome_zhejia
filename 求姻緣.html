@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>老公宮</title>
+	<title>老恭宮</title>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <style>
 
@@ -179,7 +179,7 @@ function getRndInteger(min, max) {
 };
 
 $('.js-start').on('click', function () {
- var number = getRndInteger(1,15);
+ var card = getRndInteger(1,15);
 
 
     $('.js-img-shake').show();
@@ -188,7 +188,7 @@ $('.js-start').on('click', function () {
     setTimeout(function() {
         $('.js-img-shake').hide();
         $('.js-img-ok').show();
-        $('.js-result').text('抽籤結果：第' + [number] + '籤！');
+        $('.js-result').text('您抽到了這支籤哦！祝您感情順利一切平安！');
     }, 3000);
 });
 
@@ -198,8 +198,9 @@ function selectCard(){
       var card = card_n1;
       console.log( card  );
       var card_div = document.getElementById("card");
-      card_div.innerHTML =  `<img src='https://sheusampras.github.io/nutnddca_handsome_zhejia/${card}.png' alt='Playing Card'>`;
+      setTimeout(function() {card_div.innerHTML =  `<img src='${card}.png' alt='您的籤詩'>`;}, 3000);
     };
+	
     function getRandom(min, max) { 
       return Math.floor(Math.random() * (max - min) ) + min;
     };
