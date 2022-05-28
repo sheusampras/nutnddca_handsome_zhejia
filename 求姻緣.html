@@ -1,24 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>老恭宮</title>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-
-body {
-    text-align: center;
-    padding: 60px;
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://sheusampras.github.io/nutnddca_handsome_zhejia/miau.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 
-textarea {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    margin: 5px auto;
-    display: block;
-}
+
+
 
 button {
     display: block;
@@ -41,7 +42,7 @@ button:active {
     background-color: #dc3545;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC');
+
 body{
   background-color:#CCC3B3;
   font-family: 'Noto Serif TC', serif;
@@ -122,18 +123,36 @@ div#last-div {
             height:200px;
             background: yellow;
         }
-</style>
+.footer{
+height:10px;
+}
 
+
+</style>
 </head>
 <body>
-<!--丟杯-->
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    <font color="#FF00FF">如花似錦的年華</font>
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top"><font color="#FF0000">老    恭    宮</font></h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center"><font color="	#FF5151">求 姻 緣 的 好 去 處</font></p>
+  </div>
+</div>
+
+
+
 <div class="get-result">
+<h1>請先擲筊！</h1>
   <a id="go" href="#">擲筊</a> 
 
 <div class="hide">
 
 <div id="r1" class="r">
-	<h1><br><b>聖筊！</h1></b></br>
+<h1><br><b>聖筊！</h1></b></br>
 	<div class="all" id="all">
 	<div class="left"></div>
 	<div class="right"><span></span></div>
@@ -147,7 +166,7 @@ div#last-div {
 	</div>
 </div>
 <div id="r3" class="r">
-	<h1><font color="#FF0000"><br><b>聖筊！</h1></b></br></font>
+<h1><font color="#FF0000"><br><b>聖筊！</h1></b></br></font>
 	<div class="all" id="all">
 	<div class="left"></div>
 	<div class="right"><span></span></div>
@@ -157,23 +176,33 @@ div#last-div {
 </div>
 
 <div id="last-div">
-三個聖筊<br>月老顯靈<br>可以抽籤！<br><br><br><br><br>
+三個聖筊<br>月老顯靈<br>可以抽籤！<br><br><br><br><br><br>
 
 
 <!--抽籤-->
-    <img src="https://sb.koding.school/project_assets/340268eb8629923b937ff7c671915d98.png" class="js-img-ok"  height="200"/>
+
+    <img src="https://sb.koding.school/project_assets/340268eb8629923b937ff7c671915d98.png" class="js-img-ok" height="200"/>
     <img src="https://sb.koding.school/project_assets/3427b4fab4d70b8636458e3274e42da9.gif" class="js-img-shake" height="200"/>
-    <h1 class="js-result">老公宮抽籤</h1>
+    <h1 class="js-result">請抽一支詩籤！</h1>
     <button class="js-start" onclick="selectCard();this.style.visibility='hidden';">開抽！</button>
+	
+	
 <div id="card">
-    <img src="c321a438-1bd5-4b3b-8c4d-d30cf5043bf3_m.jpg" height="200">
+    <img src="https://sheusampras.github.io/nutnddca_handsome_zhejia/c321a438-1bd5-4b3b-8c4d-d30cf5043bf3_m.jpg" height="200">
+</div>
+</div>
 </div>
 
-	</div>
-</div>
-	
-	
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+  <p class="w3-medium">南大戲劇與創作學系111級 <a href="https://www.facebook.com/nutnAppliedTheatre" target="_blank">應用組</a></p>
+</footer>
+
+
 <script>
+
+
+
 <!--抽籤-->
 $('.js-img-shake').hide();
 
@@ -196,12 +225,12 @@ $('.js-start').on('click', function () {
 });
 
 function selectCard(){
-      var cards1 = ["1","2" , "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
-      var card_n1 = cards1 [getRandom(0,14)];
+      var cards1 = ["1","2" , "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+      var card_n1 = cards1 [getRandom(0,15)];
       var card = card_n1;
       console.log( card  );
       var card_div = document.getElementById("card");
-      setTimeout(function() {card_div.innerHTML =  `<img src='${card}.png' alt='您的籤詩' width="946" height="945" style="vertical-align:middle">`;}, 3000);
+      setTimeout(function() {card_div.innerHTML =  `<img src='https://sheusampras.github.io/nutnddca_handsome_zhejia/${card}.png' alt='Playing Card'>`;}, 3000);
     };
 	
     function getRandom(min, max) { 
@@ -275,7 +304,11 @@ function fisherYates ( myArray ) {
 }
 
 
+
+
+
 </script>
+
 
 </body>
 </html>
