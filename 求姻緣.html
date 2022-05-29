@@ -181,14 +181,14 @@ height:10px;
 
 <!--抽籤-->
 
-    <img src="https://sb.koding.school/project_assets/340268eb8629923b937ff7c671915d98.png" class="js-img-ok" height="200"/>
-    <img src="https://sb.koding.school/project_assets/3427b4fab4d70b8636458e3274e42da9.gif" class="js-img-shake" height="200"/>
+    <img src="chian.png" class="js-img-ok" height="200"/>
+    <img src="chian.gif" class="js-img-shake" height="200"/>
     <h1 class="js-result">請抽一支詩籤！</h1>
     <button class="js-start" onclick="selectCard();this.style.visibility='hidden';">開抽！</button>
 	
 	
 <div id="card">
-    <img src="https://sheusampras.github.io/nutnddca_handsome_zhejia/c321a438-1bd5-4b3b-8c4d-d30cf5043bf3_m.jpg" height="200">
+    <img src="c321a438-1bd5-4b3b-8c4d-d30cf5043bf3_m.jpg" height="200">
 </div>
 </div>
 </div>
@@ -230,7 +230,7 @@ function selectCard(){
       var card = card_n1;
       console.log( card  );
       var card_div = document.getElementById("card");
-      setTimeout(function() {card_div.innerHTML =  `<img src='https://sheusampras.github.io/nutnddca_handsome_zhejia/${card}.png' alt='Playing Card'>`;}, 3000);
+      setTimeout(function() {card_div.innerHTML =  `<img src='${card}.png' alt='Playing Card'>`;}, 3000);
     };
 	
     function getRandom(min, max) { 
